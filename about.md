@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About Pixyll
-permalink: /about/
+title: Sobre Nosotros
+permalink: /nosotros/
 tags: about
 ---
 

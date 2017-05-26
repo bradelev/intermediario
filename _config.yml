@@ -1,11 +1,11 @@
 # Site settings
-title:       Pixyll
+title:       Intermediario
 email:       your_email@example.com
-author:      John Otander
+author:      Braulio De Leon
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
-baseurl:     ""
-url:         "http://pixyll.com"
-date_format: "%b %-d, %Y"
+baseurl:     "/intermediario"
+url:         "http://localhost:4000"
+date_format: "%-d %b, %Y"
 
 # Google services
 google_verification:
@@ -94,7 +94,6 @@ text:
     hackernews:   'Share on Hacker News'
   post:
     updated:        'Updated'
-    minute_read:    'minute read'
     related_posts:  'Related Posts'
   index:
     coming_soon: 'Coming soon...'
@@ -115,7 +114,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     4
+paginate:     10
 sass:
   style: compressed
 gems:
