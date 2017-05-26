@@ -4,7 +4,7 @@ email:       your_email@example.com
 author:      Braulio De Leon
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     "/intermediario"
-url:         "http://localhost:4000"
+url:         "http://bradelev.github.io"
 date_format: "%-d %b, %Y"
 
 # Google services
