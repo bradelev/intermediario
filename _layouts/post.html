@@ -6,7 +6,6 @@ layout: default
 <span class="date"></span>
 <div class="post-header mb2">
   <h1>{{ page.title }}</h1>
-  <span class="post-meta">{{ day }}/{{ month }}/{{ year }}</span><br>
   {% if page.update_date %}
     <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
   {% endif %}
@@ -24,7 +23,7 @@ layout: default
     <div class="post ml2">
       <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
         <h4 class="post-title">{{ post.title }}</h4>
-        <p class="post-summary">{{ post.summary }}</p>
+        <div class="post-summary">{{ post.summary }}</div>
       </a>
     </div>
   {% endfor %}
