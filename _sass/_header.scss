@@ -10,7 +10,12 @@
   background-image: none;
 }
 
-.site-header .site-title {
+.site-title {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.site-header  {
   font-size: $h2;
 }
 
