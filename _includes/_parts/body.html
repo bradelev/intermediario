@@ -1,0 +1,9 @@
+<h2>{{ site.description }}</h2>
+<h3>{{ data.titulo_seccion }}</h3>
+
+<h4>Año 2017</h4>
+<ul>
+  {% for post in site.posts %}
+  <li><a href="{{ post.url | prepend: full_base_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>

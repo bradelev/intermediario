@@ -1,0 +1,53 @@
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #eee;
+}
+.main {
+  background-color: #fff;
+  padding: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  min-height: 80vh;
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+.header {
+  background-color: #0360a6;
+  height: 10vh;
+  // height: 130px;
+  // margin: 20px;
+}
+.strip-date {
+  background-color: #033088;
+  color: #eee;
+  margin: 0;
+  padding: 5px;
+  font-size: 1rem
+
+}
+.title {
+  font-weight: bold;
+  font-size:2rem;
+  h1 {
+    color: #fff;
+  }
+}
+li {
+  list-style-type: none;
+}
+footer {
+  height: 20vh;
+  padding: 20px;
+}
+
+.company-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.company-description {
+  font-size: 1.2rem;
+  font-style: italic;
+}

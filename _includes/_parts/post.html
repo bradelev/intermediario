@@ -1,0 +1,23 @@
+{% assign year = page.date | date: '%Y' %}
+<p>{{year}}</p>
+{% for p in site.data.publicaciones.publicaciones %}
+<div class="row">
+  <div class="col-md-9">
+    Año {{ page.date | date: "%Y"}} |
+    Publicación {{ forloop.rindex }} |
+    Fecha: {{ p.date | date: "%d/%m/%Y"}}
+  </div>
+  <div class="col-md-3">
+    <a href="{{ p.link }}">Link para descargar e-diario</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {% for e in p.empresas %}
+      <h3 class="company-title">{{ e.titulo }}</h3>
+      <p class="company-description">{{ e.descripcion }}</p>
+    {% endfor %}
+  </div>
+</div>
+<hr>
+{% endfor %}

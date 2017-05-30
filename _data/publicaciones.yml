@@ -1,0 +1,25 @@
+publicaciones:
+  - date: 2017-05-05 12:30:30 -0300
+    link: http://link.com/algo.pdf
+    empresas:
+      - titulo: FORATARN S.R.L
+        descripcion: Reforma Objeto
+      - titulo: SPELUNCA S.R.L
+        descripcion: bbbbbbb
+      - titulo: CHEUCHEI S.R.L
+        descripcion: ccccccc
+  - date: 2017-05-03 12:30:30 -0300
+    link: http://link.com/algo.pdf
+    empresas:
+      - titulo: titulo aaaaaa
+        descripcion: descripcion blabalbalaaaa
+      - titulo: ddddd
+        descripcion: b
+    
+  
+
+# publicaciones:
+#   numero: 1
+#   empresas: 
+#     nombre: asdfasdf
+#     nombre: zxcvzxcv

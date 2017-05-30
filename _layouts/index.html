@@ -1,0 +1,17 @@
+<html>
+  <head>
+    {% include _parts/head.html %}
+  </head>
+  <body>
+    <div class="container-fluid">
+    {% include _parts/header.html %}
+
+      <div class="main">
+        {% include _parts/body.html data=site.data.index %}
+      </div>
+      {% include _parts/footer.html %}
+    </div>
+
+    {% include _parts/scripts.html %}
+  </body>
+</html>
