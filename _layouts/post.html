@@ -3,8 +3,8 @@
     {% include _parts/head.html %}
   </head>
   <body>
-    <div class="container-fluid">
-    {% include _parts/header.html %}
+    <div>
+      {% include _parts/header.html bg="false" %}
       <div class="main">
         {% include _parts/post.html data=site.data.publicaciones %}
       </div>

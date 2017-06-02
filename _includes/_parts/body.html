@@ -1,6 +1,5 @@
 
-<h3>{{ data.titulo_seccion }}</h3>
-<div class="container-fluid" id="pubicaciones">
+<div class="container-fluid" id="publicaciones">
   <div class="row">
     <div class="col-xs-4"></div>
     <div class="col-xs-4">
@@ -8,7 +7,7 @@
     <h3 class="text-center">Publicaciones</h3>
     <ul class="text-center">
       {% for post in site.posts %}
-      <li><a href="{{ post.url | prepend: full_base_url }}">{{ post.title }}</a></li>
+      <li><a href="{{ post.url | prepend: full_base_url }}" style="margin-left: -20px;">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
     </div>
