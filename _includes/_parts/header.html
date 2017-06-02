@@ -1,15 +1,81 @@
-<div class="row header">
+{% assign dayWeek = site.time | date: "%-A" %}
+{% assign month = site.time | date: "%-m" %}
+{% assign anioPub = site.time | date: "%Y" %}
+{% case month %}
+  {% when '1' %}{% assign month = 'Enero' %}
+  {% when '2' %}{% assign month = 'Febrero' %}
+  {% when '3' %}{% assign month = 'Marzo' %}
+  {% when '4' %}{% assign month = 'Abril' %}
+  {% when '5' %}{% assign month = 'Mayo' %}
+  {% when '6' %}{% assign month = 'Junio' %}
+  {% when '7' %}{% assign month = 'Julio' %}
+  {% when '8' %}{% assign month = 'Agosto' %}
+  {% when '9' %}{% assign month = 'Setiembre' %}
+  {% when '10' %}{% assign month = 'Octubre' %}
+  {% when '11' %}{% assign month = 'Noviembre' %}
+  {% when '12' %}{% assign month = 'Diciembre' %}
+{% endcase %}
+{% case dayWeek %}
+  {% when 'Sunday' %}{% assign dayWeek = 'Domingo' %}
+  {% when 'Monday' %}{% assign dayWeek = 'Lunes' %}
+  {% when 'Tuesday' %}{% assign dayWeek = 'Martes' %}
+  {% when 'Wednesday' %}{% assign dayWeek = 'Miércoles' %}
+  {% when 'Thursday' %}{% assign dayWeek = 'Jueves' %}
+  {% when 'Friday' %}{% assign dayWeek = 'Viernes' %}
+  {% when 'Saturday' %}{% assign dayWeek = 'Sábado' %}
+{% endcase %}
+{% case anioPub %}
+  {% when '2017' %}{% assign anioPub = 'I' %}
+  {% when '2018' %}{% assign anioPub = 'II' %}
+  {% when '2019' %}{% assign anioPub = 'III' %}
+  {% when '2020' %}{% assign anioPub = 'IV' %}
+  {% when '2021' %}{% assign anioPub = 'V' %}
+  {% when '2022' %}{% assign anioPub = 'VI' %}
+  {% when '2022' %}{% assign anioPub = 'VII' %}
+{% endcase %}
+
+<!--<div class="row header">
   <div class="title">
     <a href="{{ site.url }}{{ site.baseurl }}/"><h1 class="text-center">{{ site.title }}</h1></a>
   </div>
-</div>
-<div class="row">
 
-  <nav>
-    <div class="row strip-date">
-      <div class="col-md-6">
-        Año {{ site.data.publicaciones.publicaciones[0].date | date: "%Y" }}
-      </div>
+
+</div>-->
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{site.url}}{{site.baseurl}}/">
+        Intermediario
+      </a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-  </nav>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{site.url}}{{site.baseurl}}/">Inicio</a></li>
+        <li><a href="#publicaciones">Publicaciones</a></li>
+        <li><a href="contacto">Contacto</a></li>
+      </ul>
+    </div>
+	</div>
+</nav>
+<div class="bg">
+  <span>{{ site.description }}</span>
+</div>
+<div class="container-fluid">
+  <div class="row strip-date">
+    <div class="col-sm-2">
+      Año {{ anioPub }}
+    </div>
+    <div class="col-sm-10">
+        <span class="pull-right">Montevideo {{dayWeek}} {{ site.time | date: "%d" }} de {{month}} de {{ site.time | date: "%Y" }}
+      </span>
+    </div>
+  </div>
 </div>

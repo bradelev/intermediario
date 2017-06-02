@@ -1,6 +1,8 @@
 {% assign year = page.date | date: '%Y' %}
-<p>{{year}}</p>
+<!--<p>{{year}}</p>-->
 {% for p in site.data.publicaciones.publicaciones %}
+<section class="publicacion">
+  
 <div class="row">
   <div class="col-md-9">
     Año {{ page.date | date: "%Y"}} |
@@ -19,5 +21,17 @@
     {% endfor %}
   </div>
 </div>
+</section>
 <hr>
 {% endfor %}
+
+<!--<h2>Archive</h2>
+{% assign postsByYearMonth = site.data.publicaciones.publicaciones | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
+{% for yearMonth in postsByYearMonth %}
+  <h3>{{ yearMonth.name }}</h3>
+    <ul>
+      {% for post in yearMonth.items %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+{% endfor %}-->
