@@ -2,7 +2,7 @@
 <!--<p>{{year}}</p>-->
 {% for p in site.data.publicaciones.publicaciones %}
 <section class="publicacion">
-  
+
 <div class="row">
   <div class="col-md-9">
     Año {{ page.date | date: "%Y"}} |
@@ -10,7 +10,7 @@
     Fecha: {{ p.date | date: "%d/%m/%Y"}}
   </div>
   <div class="col-md-3">
-    <a href="{{ p.link }}">Link para descargar e-diario</a>
+    <a href="{{ p.link }}" class="pull-right">Link para descargar e-diario</a>
   </div>
 </div>
 <div class="row">
