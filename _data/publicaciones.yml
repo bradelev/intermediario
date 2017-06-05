@@ -1,20 +1,38 @@
 publicaciones:
-  - date: 2017-05-05 12:30:30 -0300
+  - date: 2017-05-30 12:30:30 -0300
     link: http://link.com/algo.pdf
     empresas:
-      - titulo: FORATARN S.R.L
-        descripcion: Reforma Objeto
-      - titulo: SPELUNCA S.R.L
+      - titulo: ADAPAZAN S.A.
+        descripcion: >
+          OBJETO: A) Industrializar y comercializar en todas sus formas, mercaderías, arrendamiento de obras, 
+          bienes y servicios en los ramos y anexos de: alimentación, artículos del hogar y oficina, automotriz, bar, 
+          bazar, caucho, construcción, cosmética, cueros, editorial, electrónica, electrotecnia, enseñanza, 
+          espectáculos, ferreteria, fotografía, hotel, imprenta, informática, joyería, juguetería, lana, lavadero, 
+          librería, limpieza, madera, máquinas, mecánica, metalurgia, música, obras de ingeniería, óptica, papel, 
+          perfumería, plástico, publicidad, química, servicios profesionales, técnicos y administrativos, tabaco, 
+          textil, turismo, valores mobiliarios, vestimenta, veterinaria, vidrio. B) Importaciones, exportaciones,
+          representaciones, comisiones y consignaciones. C) Compra, venta, arrendamiento, administración, construcción
+          y toda clase de operaciones con bienes inmuebles, excepto los rurales afectados a la explotación agraria
+          definida en art 3 de la Ley 17.777 y habiendo obtenido la autorización del Poder Ejecutivo si correspondiera.
+          D) Participación, constitución o adquisición de empresas que operen en los ramos pre-indicados.
+          Montevideo, Cien años. $80.000
+          15/05/17, No 6347
+      - titulo: CHAMARTIN S.A.
         descripcion: bbbbbbb
-      - titulo: CHEUCHEI S.R.L
+      - titulo: DESDERMONDE S.A.
         descripcion: ccccccc
-  - date: 2017-05-03 12:30:30 -0300
-    link: http://link.com/algo.pdf
-    empresas:
-      - titulo: titulo aaaaaa
-        descripcion: descripcion blabalbalaaaa
-      - titulo: ddddd
-        descripcion: b
+      - titulo: LAMYRA S.A.
+        descripcion: Reforma Objeto
+      - titulo: LESSEPS S.A.
+        descripcion: bbbbbbb
+      - titulo: MESTRENE S.A.
+        descripcion: ccccccc
+      - titulo: RUBALIR S.A.
+        descripcion: Reforma Objeto
+      - titulo: SIMANCAS S.A.
+        descripcion: bbbbbbb
+      - titulo: TIBURTINA S.A.
+        descripcion: ccccccc
     
   
 
