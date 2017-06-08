@@ -4,20 +4,20 @@
 <section class="publicacion">
 
 <div class="row">
-  <div class="col-md-9">
-    Año {{ page.date | date: "%Y"}} |
+  <div class="col-md-8">
+    <strong>Año {{ page.date | date: "%Y"}} | 
     Publicación {{ forloop.rindex }} |
-    Fecha: {{ p.date | date: "%d/%m/%Y"}}
+    Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong>
   </div>
-  <div class="col-md-3">
-    <a href="{{ p.link }}" class="pull-right">Link para descargar e-diario</a>
+  <div class="col-md-4">
+    <a href="{{ p.link }}" class="pull-right">Link para descargar edición impresa</a>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     {% for e in p.empresas %}
       <h3 class="company-title">{{ e.titulo }}</h3>
-      <p class="company-description">{{ e.descripcion }}</p>
+      <p class="company-description" style="text-align: justify;">{{ e.descripcion }}</p>
     {% endfor %}
   </div>
 </div>

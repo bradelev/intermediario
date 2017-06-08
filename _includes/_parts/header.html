@@ -59,17 +59,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right js-nav">
         <li><a href="{{site.url}}{{site.baseurl}}/">Inicio</a></li>
-        <li><a href="{{site.url}}{{site.baseurl}}/#publicaciones">Publicaciones</a></li>
+        <li><a href="{{site.url}}{{site.baseurl}}/#publicaciones">Ediciones</a></li>
         <li><a href="{{site.url}}{{site.baseurl}}/contacto">Contacto</a></li>
       </ul>
     </div>
 	</div>
 </nav>
-{% if include.bg == "true" %}
-<div class="bg">
+<div class="bg bg-{{ include.bg }}">
+  {% if include.bg == "index-full" %}
   <span>{{ site.description }}</span>
+  {% endif %}
 </div>
-{% endif %}
 <div class="container-fluid strip">
   <div class="row strip-date">
     <div class="col-sm-2">
