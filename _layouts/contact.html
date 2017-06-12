@@ -4,12 +4,14 @@
   </head>
   <body>
     <div>
-      {% include _parts/header.html bg="post-medium" %}
+      {% include _parts/header.html%}
+
       <div class="main">
-        {% include _parts/post.html data=site.data.publicaciones %}
+        {% include _parts/contact.html %}
       </div>
       {% include _parts/footer.html %}
     </div>
+
     {% include _parts/scripts.html %}
   </body>
 </html>
