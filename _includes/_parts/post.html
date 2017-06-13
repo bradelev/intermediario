@@ -1,29 +1,61 @@
 {% assign year = page.date | date: '%Y' %}
 <!--<p>{{year}}</p>-->
-{% for p in site.data.publicaciones.publicaciones %}
-<section class="publicacion">
+<div class="container-fluid">
+  <div class="col-md-2">
+    <nav class=" sidebar">
+      <h4>Publicaciones</h4>
+      <ul>
+        <li>Mayo 2017</li>
+        <ul>
+          <li>Publicación 1</li>
+          <li>Publicación 1</li>
+          <li>Publicación 1</li>
+        </ul>
+        <li>Mayo 2017</li>
+        <ul>
+          <li>Publicación 1</li>
+          <li>Publicación 1</li>
+          <li>Publicación 1</li>
+        </ul>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-10">
+    {% for p in site.data.publicaciones.publicaciones %}
+    <section class="publicacion">
 
-<div class="row">
-  <div class="col-md-8">
-    <strong>Año {{ page.date | date: "%Y"}} | 
-    Publicación {{ forloop.rindex }} |
-    Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong>
-  </div>
-  <div class="col-md-4">
-    <a href="{{ p.link }}" class="pull-right">Link para descargar edición impresa</a>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    {% for e in p.empresas %}
-      <h3 class="company-title">{{ e.titulo }}</h3>
-      <p class="company-description" style="text-align: justify;">{{ e.descripcion }}</p>
+      <div class="row post-date">
+        <div class="col-md-6">
+          <strong>Año {{ page.date | date: "%Y"}} | 
+          Publicación {{ forloop.rindex }} |
+          Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong>
+        </div>
+        <div class="col-md-6">
+          <a href="{{ p.link }}" class="pull-right">Link para descargar edición impresa</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {% for e in p.empresas %}
+            <h3 class="company-title">{{ e.titulo }}</h3>
+            <p class="company-description">
+              {{ e.descripcion }}
+              <br>
+              {{ e.lugar }}
+              <br> 
+              {{ e.fecha }}
+            </p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <hr>
     {% endfor %}
   </div>
 </div>
-</section>
-<hr>
-{% endfor %}
+
+
+
 
 <!--<h2>Archive</h2>
 {% assign postsByYearMonth = site.data.publicaciones.publicaciones | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
