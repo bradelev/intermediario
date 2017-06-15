@@ -27,8 +27,14 @@ markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+  - algoliasearch-jekyll
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
 sass:
   sass_dir: _sass
+algolia:
+  application_id: 'VYYWVOVY1I'
+  index_name:     'dev_INTERMEDIARIO'
+  record_css_selector: 'h3, p'
