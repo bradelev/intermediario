@@ -4,6 +4,11 @@ html {
   font-size: 14px;
 }
 
+hr {
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
 .header-top,
 .post-top,
 .contact-top {
@@ -36,12 +41,12 @@ html {
   letter-spacing: 1px;
   height: 90vh;
   @media (min-width: 768px) {
-    height: calc(100vh - 40px);
+    height: calc(100vh);
   }
   .title {
     color: #eee;
     font-size: 2rem;
-    // vertical-align: middle;
+    font-weight: bold;
     margin: 0;
     @media (min-width: 768px) {
       font-size: 3rem;
@@ -208,8 +213,10 @@ footer {
 .sidebar > ul {
   border-top: 1px solid #ccc;
 }
+.sidebar > ul > li {
+  font-weight: bold;
+}
 .sidebar ul li {
-  // color: red;
   list-style-type: none;
   margin-left: 0px;
 }

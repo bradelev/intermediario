@@ -56,9 +56,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav js-nav">
         <li><a href="{{site.url}}{{site.baseurl}}/">Inicio</a></li>
+        <li><a href="{{site.url}}{{site.baseurl}}/ediciones.html">Ediciones</a></li>
         <li><a href="{{site.url}}{{site.baseurl}}/#noticias">Noticias</a></li>
-        <li><a href="{{site.url}}{{site.baseurl}}/ediciones">Ediciones</a></li>
-        <li><a href="{{site.url}}{{site.baseurl}}/contacto">Contacto</a></li>
+        <li><a href="{{site.url}}{{site.baseurl}}/contacto.html">Contacto</a></li>
       </ul>
       <form class="navbar-form navbar-right">
         <div class="form-group">
@@ -77,9 +77,9 @@
   {% if include.bg == "index-full" %}
   <div class="header-top">
     <p>
-      <a href="{{site.url}}{{site.baseurl}}/"><span class="title">interme<u>DIARIO</u></span></a>
+      <span class="title">interme<u>DIARIO</u></span>
       <br>
-      <span class="subtitle">Intermediario periódico especializado en publicaciones legales</span>
+      <span class="subtitle">Periódico especializado en publicaciones legales</span>
     </p>
   </div>
   {% elsif include.bg == "post" %}
@@ -88,10 +88,10 @@
   <div class="contact-top"></div>
   {% endif %}
 
-  <div class="strip-date">
+  <!--<div class="strip-date">
     <div class="col-sm-6">Año {{ anioPub }}</div>
     <div class="hidden-xs col-sm-6 text-right">Montevideo {{dayWeek}} {{ site.time | date: "%d" }} de {{month}} de {{ site.time | date: "%Y" }}</div>
     <div class="col-sm-6 visible-xs">Montevideo {{dayWeek}} {{ site.time | date: "%d" }} de {{month}} de {{ site.time | date: "%Y" }}</div>
-  </div>
+  </div>-->
 </div>
 

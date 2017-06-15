@@ -1,37 +1,29 @@
 {% assign year = page.date | date: '%Y' %}
 <!--<p>{{year}}</p>-->
 <div class="container-fluid">
-  <div class="col-md-2">
-    <nav class=" sidebar">
+  <div class="col-md-3">
+    <nav class="sidebar">
       <h4>Publicaciones</h4>
       <ul>
         <li>Mayo 2017</li>
         <ul>
-          <li>Publicación 1</li>
-          <li>Publicación 1</li>
-          <li>Publicación 1</li>
-        </ul>
-        <li>Mayo 2017</li>
-        <ul>
-          <li>Publicación 1</li>
-          <li>Publicación 1</li>
-          <li>Publicación 1</li>
+          <li>30.05.2017 Publicación 1</li>
         </ul>
       </ul>
     </nav>
   </div>
-  <div class="col-md-10">
+  <div class="col-md-9">
     {% for p in site.data.publicaciones.publicaciones %}
     <section class="publicacion">
 
       <div class="row post-date">
         <div class="col-md-6">
-          <strong>Año {{ page.date | date: "%Y"}} | 
+          <strong>Año {{ anioPub }} | 
           Publicación {{ forloop.rindex }} |
-          Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong>
+          Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong><br>
+          <a href="{{ p.link }}">Link para descargar edición impresa</a>
         </div>
         <div class="col-md-6">
-          <a href="{{ p.link }}" class="pull-right">Link para descargar edición impresa</a>
         </div>
       </div>
       <div class="row">
@@ -45,11 +37,11 @@
               <br> 
               {{ e.fecha }}
             </p>
+            <hr>
           {% endfor %}
         </div>
       </div>
     </section>
-    <hr>
     {% endfor %}
   </div>
 </div>
