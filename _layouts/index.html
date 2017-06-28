@@ -10,26 +10,20 @@
         <h2>Novedades</h2>
         <div class="row">
           <div class="col-lg-8">
-            <article class="news">
-              <h3>Titulo</h3>
-              <div class="news-content">
-
-              <p>Parrafo 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              <p>Parrafo 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              <p>Parrafo 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              <p>Parrafo 4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              </div>
-            </article>
-            <article class="news">
-              <h3>Titulo 2</h3>
-              <div class="news-content">
-
-              <p>Parrafo 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              <p>Parrafo 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              <p>Parrafo 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              <p>Parrafo 4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam laudantium, quod voluptatibus alias aperiam delectus laboriosam officiis deserunt asperiores reprehenderit commodi ullam quasi aliquid voluptas dignissimos totam iste doloribus, nulla.</p>
-              </div>
-            </article>
+            {% if site.categories.noticias %}
+              {% for p in site.categories.noticias %}
+              <article class="news">
+                <h3>{{ p.titulo }}</h3>
+                <div class="news-content">
+                  {{ p.content }}
+                </div>
+              </article>
+              {% endfor %}
+            {% else %}
+              <article class="news">
+                <h4>Próximamente, puedes ver <a href="/ediciones">nuestras publicaciones</a></h4>
+              </article>
+            {% endif %}
           </div>
         </div>
       </div>

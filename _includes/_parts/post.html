@@ -1,61 +1,131 @@
 {% assign year = page.date | date: '%Y' %}
-<!--<p>{{year}}</p>-->
 <div class="container-fluid">
   <div class="col-md-3">
     <nav class="sidebar">
+      {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
+      <!--<p>{{ postsByYear }}</p>-->
       <h4>Publicaciones</h4>
       <ul>
-        <li>Mayo 2017</li>
-        <ul>
-          <li>30.05.2017 Publicación 1</li>
-        </ul>
+      
+      {% for year in postsByYear %}
+        <li class="t">{{ year.name }}</li>
+          <ul>
+            {% for post in year.items %}
+              <li><a href="{{ post.url }}">{{ post.fecha_visible}} {{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+      {% endfor %}
       </ul>
     </nav>
   </div>
   <div class="col-md-9">
-    {% for p in site.data.publicaciones.publicaciones %}
     <section class="publicacion">
 
       <div class="row post-date">
         <div class="col-md-6">
-          <strong>Año {{ anioPub }} | 
-          Publicación {{ forloop.rindex }} |
+          {% if page.content == "" %}
+            {% for p in site.posts limit:1 %}
+              <strong>Año {{ anioPub }} | 
+          {{ p.titulo }}|
           Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong><br>
-          <a href="{{ p.link }}">Link para descargar edición impresa</a>
+            {% endfor %}
+          {% else %}
+          <strong>Año {{ anioPub }} | 
+          {{ page.titulo }}|
+          Fecha: {{ page.date | date: "%d/%m/%Y"}}</strong><br>
+          {% endif %}
+          <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones{{ page.link_archivo }}">Link para descargar edición impresa</a><br>
+
         </div>
         <div class="col-md-6">
+          <div class="pull-right">
+
+            <a href="mailto:?subject=Intermediario: {{page.fecha_visible}} {{page.titulo}}&amp;body=Link de la publicacion, {{site.url}}{{site.baseurl}}{{page.url}}"
+   title="Compartir por Email">
+              <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            </a>
+            <script>
+              function printArea() {
+
+                  var prtContent = document.getElementById("printable-area");
+                  console.log(prtContent);
+                  var cssFile = new String ('\
+                  <style type="text/css">\
+                  @media print {\
+                    p {\
+                      font-size: 6pt;\
+                      text-align: justify;\
+                    }\
+                    h2 {\
+                      font-size: 8pt;\
+                    }\
+                    footer {\
+                      text-align: justify;\
+                      background-color: #023c77;\
+                      color: #eee;\
+                    }\
+                    #membrete {\
+                      background-color: #023c77;\
+                      padding: 10px;\
+                      color: #eee;\
+                    }\
+                    #membrete h2{\
+                      font-size: 8pt;\
+                    }\
+                    #membrete p{\
+                      font-size: 4pt;\
+                    }\
+                  }\
+                  </style>');
+                  // var cssFile ='<style>color: red</style>';
+                  var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+                  var content = '<!DOCTYPE html><html lang="es"><head><title></title>';
+                  // content += '<link rel="stylesheet" href="http://localhost:4000/css/main.css" media="all">';
+                  content += cssFile;
+                  content += '</head><body>';
+                  content += prtContent.innerHTML;
+                  content += document.getElementsByTagName("footer")[0].innerHTML;
+                  content +='</body></html>';
+                  console.log("CONTENT", content);
+                  WinPrint.document.write(content);
+                  WinPrint.document.close();
+                  WinPrint.focus();
+                  WinPrint.print();
+                  WinPrint.close();
+              }
+            </script>
+            <a href="#" onclick="printArea()">
+              <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+            </a>
+            <a href="#" onclick="window.print();">imprimir</a>
+          </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
-          {% for e in p.empresas %}
-            <h3 class="company-title">{{ e.titulo }}</h3>
-            <p class="company-description">
-              {{ e.descripcion }}
-              <br>
-              {{ e.lugar }}
-              <br> 
-              {{ e.fecha }}
-            </p>
-            <hr>
-          {% endfor %}
+        <div class="col-xs-12" id="printable-area">
+          <div class="row" id="membrete">
+            <div class="col-xs-12">
+
+              <h2>Intermediario</h2>
+              <p>Montevideo, Año {{ anioPub }} | 
+            {{ page.titulo }} |
+            Fecha: {{ page.date | date: "%d/%m/%Y"}}</p>
+            
+            </div>
+          </div>
+          {% if page.content == "" %}
+            {% for p in site.posts limit:1 %}
+              {{ p.content }}
+            {% endfor %}
+            
+          {% else %}
+            {{ page.content }}
+          {% endif %}
+          
         </div>
       </div>
     </section>
-    {% endfor %}
   </div>
 </div>
 
 
-
-
-<!--<h2>Archive</h2>
-{% assign postsByYearMonth = site.data.publicaciones.publicaciones | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
-{% for yearMonth in postsByYearMonth %}
-  <h3>{{ yearMonth.name }}</h3>
-    <ul>
-      {% for post in yearMonth.items %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
-{% endfor %}-->

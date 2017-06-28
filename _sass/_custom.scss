@@ -6,7 +6,8 @@ html {
 
 hr {
   border: 1px solid #eee;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .header-top,
@@ -185,6 +186,14 @@ footer {
   padding: 20px 0;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+#membrete {
+  display: none;
+}
+
 .company-description {
   text-align: justify;
   padding-top: 10px;
@@ -227,3 +236,4 @@ footer {
 .sidebar ul li ul li {
   margin-left: -15px
 }
+

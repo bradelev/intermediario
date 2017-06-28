@@ -14,11 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Intermediario
-email: your-email@domain.com
+email: intermediario@asesur.com.uy
 description: > # this means to ignore newlines until "baseurl:"
   Intermediario es una publicacion digital especializada en..
-baseurl: "/intermediario" # the subpath of your site, e.g. /blog
-url: "https://bradelev.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://www.intermediario.com.uy" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -27,14 +27,8 @@ markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
-  - algoliasearch-jekyll
 exclude:
   - Gemfile
   - Gemfile.lock
-  - vendor
 sass:
   sass_dir: _sass
-algolia:
-  application_id: 'VYYWVOVY1I'
-  index_name:     'dev_INTERMEDIARIO'
-  record_css_selector: 'h3, p'
