@@ -25,23 +25,24 @@
         <div class="col-md-6">
           {% if page.content == "" %}
             {% for p in site.posts limit:1 %}
-              <strong>Año {{ anioPub }} | 
-          {{ p.titulo }}|
-          Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong><br>
+              <strong>Año {{ anioPub }} | {{ p.titulo }} | Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong><br>
+              <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones/{{ p.link_archivo }}">Link para descargar edición impresa</a><br>
             {% endfor %}
           {% else %}
-          <strong>Año {{ anioPub }} | 
-          {{ page.titulo }}|
-          Fecha: {{ page.date | date: "%d/%m/%Y"}}</strong><br>
+            <strong>Año {{ anioPub }} | {{ page.titulo }} | Fecha: {{ page.date | date: "%d/%m/%Y"}}</strong><br>
+            <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones/{{ page.link_archivo }}">Link para descargar edición impresa</a><br>
           {% endif %}
-          <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones{{ page.link_archivo }}">Link para descargar edición impresa</a><br>
 
         </div>
         <div class="col-md-6">
           <div class="pull-right">
-
-            <a href="mailto:?subject=Intermediario: {{page.fecha_visible}} {{page.titulo}}&amp;body=Link de la publicacion, {{site.url}}{{site.baseurl}}{{page.url}}"
-   title="Compartir por Email">
+            {% if page.content == "" %}
+              {% for p in site.posts limit:1 %}
+                <a href="mailto:?subject=Intermediario: {{p.fecha_visible}} {{p.titulo}}&amp;body=Link de la publicacion, {{site.url}}{{site.baseurl}}{{p.url}}" title="Compartir por Email">
+              {% endfor %}
+            {% else %}
+                <a href="mailto:?subject=Intermediario: {{page.fecha_visible}} {{page.titulo}}&amp;body=Link de la publicacion, {{site.url}}{{site.baseurl}}{{page.url}}" title="Compartir por Email">
+            {% endif %}
               <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
             </a>
             <script>
@@ -52,17 +53,40 @@
                   var cssFile = new String ('\
                   <style type="text/css">\
                   @media print {\
+                    @page {\
+                      size: A4 portrait;\
+                    }\
+                    @page {\
+                      @bottom-center {\
+                        content: element(footer);\
+                      }\
+                    }\
+                    body, html {\
+                      height: 100%;\
+                    }\
                     p {\
-                      font-size: 6pt;\
+                      font-size: 12pt;\
                       text-align: justify;\
+                      page-break-before: avoid;\
+                      page-break-inside: avoid;\
+                    }\
+                    h2 + p {\
+                      page-break-before:avoid;\
+                      position:relative;\
                     }\
                     h2 {\
-                      font-size: 8pt;\
+                      font-size: 14pt;\
+                      page-break-after: avoid;\
                     }\
                     footer {\
-                      text-align: justify;\
+                      text-align: center;\
                       background-color: #023c77;\
                       color: #eee;\
+                      // float: footnote;\
+                      padding: 10px;\
+                    }\
+                    hr {\
+                      border: 1px solid #fff;\
                     }\
                     #membrete {\
                       background-color: #023c77;\
@@ -70,10 +94,10 @@
                       color: #eee;\
                     }\
                     #membrete h2{\
-                      font-size: 8pt;\
+                      font-size: 16pt;\
                     }\
                     #membrete p{\
-                      font-size: 4pt;\
+                      font-size: 14pt;\
                     }\
                   }\
                   </style>');
@@ -84,7 +108,9 @@
                   content += cssFile;
                   content += '</head><body>';
                   content += prtContent.innerHTML;
+                  content += '<footer>';
                   content += document.getElementsByTagName("footer")[0].innerHTML;
+                  content += '</footer>';
                   content +='</body></html>';
                   console.log("CONTENT", content);
                   WinPrint.document.write(content);
@@ -106,10 +132,13 @@
             <div class="col-xs-12">
 
               <h2>Intermediario</h2>
-              <p>Montevideo, Año {{ anioPub }} | 
-            {{ page.titulo }} |
-            Fecha: {{ page.date | date: "%d/%m/%Y"}}</p>
-            
+              {% if page.content == "" %}
+                {% for p in site.posts limit:1 %}
+                  <p>Montevideo, Año {{ anioPub }} | {{ p.titulo }} | Fecha: {{ p.date | date: "%d/%m/%Y"}}</p>
+                {% endfor %}
+              {% else %}
+                <p>Montevideo, Año {{ anioPub }} | {{ page.titulo }} | Fecha: {{ page.date | date: "%d/%m/%Y"}}</p>
+              {% endif %}
             </div>
           </div>
           {% if page.content == "" %}
