@@ -1,0 +1,59 @@
+@media print {
+  @page {
+    size: A4 portrait;
+    font-family: 'Open Sans', sans-serif !important;
+  }
+  .post-date,
+  .sidebar,
+  .container {
+    display: none;
+  }
+  #membrete {
+    background-color: #023c77 !important;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #eee !important;
+  }
+  #membrete h2{
+    font-size: 16pt;
+  }
+  #membrete p {
+    font-size: 14pt;
+  }
+  div,
+  nav {
+    float: none !important;
+  }
+  body, html {
+    height: 100%;
+    float: none !important;
+  }
+  // body {
+  //   overflow:visible;
+  // }
+  p {
+    font-size: 12pt;
+    text-align: justify;
+    page-break-inside: avoid !important;
+    position: relative;
+  }
+  h2 {
+    font-size: 14pt;
+    page-break-after: avoid !important;  
+    position: relative;
+  }
+  footer {
+    text-align: center;
+    background-color: #023c77;
+    color: #eee;
+    padding: 10px;
+    position: relative;
+  }
+  hr {
+    border: 1px solid #fff;
+  }
+  p + p {
+    page-break-before: avoid !important;
+    position: relative;
+  }
+}

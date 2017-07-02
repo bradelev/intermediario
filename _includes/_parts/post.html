@@ -4,6 +4,23 @@
     <nav class="sidebar">
       {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
       <!--<p>{{ postsByYear }}</p>-->
+      <div>
+        <!--<div class="gcse-searchbox" data-resultsUrl="http://www.intermediario.com.uy"
+data-newWindow="true" data-queryParameterName="search" >-->
+      <script>
+  (function() {
+    var cx = '012394262284664898745:qk9skqhjppu';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<!--<gcse:search></gcse:search>-->
+<gcse:search enableAutoComplete="true"></gcse:search>
+      </div>
       <h4>Publicaciones</h4>
       <ul>
       
@@ -45,82 +62,7 @@
             {% endif %}
               <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
             </a>
-            <script>
-              function printArea() {
-
-                  var prtContent = document.getElementById("printable-area");
-                  console.log(prtContent);
-                  var cssFile = new String ('\
-                  <style type="text/css">\
-                  @media print {\
-                    @page {\
-                      size: A4 portrait;\
-                    }\
-                    @page {\
-                      @bottom-center {\
-                        content: element(footer);\
-                      }\
-                    }\
-                    body, html {\
-                      height: 100%;\
-                    }\
-                    p {\
-                      font-size: 12pt;\
-                      text-align: justify;\
-                      page-break-before: avoid;\
-                      page-break-inside: avoid;\
-                    }\
-                    h2 + p {\
-                      page-break-before:avoid;\
-                      position:relative;\
-                    }\
-                    h2 {\
-                      font-size: 14pt;\
-                      page-break-after: avoid;\
-                    }\
-                    footer {\
-                      text-align: center;\
-                      background-color: #023c77;\
-                      color: #eee;\
-                      // float: footnote;\
-                      padding: 10px;\
-                    }\
-                    hr {\
-                      border: 1px solid #fff;\
-                    }\
-                    #membrete {\
-                      background-color: #023c77;\
-                      padding: 10px;\
-                      color: #eee;\
-                    }\
-                    #membrete h2{\
-                      font-size: 16pt;\
-                    }\
-                    #membrete p{\
-                      font-size: 14pt;\
-                    }\
-                  }\
-                  </style>');
-                  // var cssFile ='<style>color: red</style>';
-                  var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-                  var content = '<!DOCTYPE html><html lang="es"><head><title></title>';
-                  // content += '<link rel="stylesheet" href="http://localhost:4000/css/main.css" media="all">';
-                  content += cssFile;
-                  content += '</head><body>';
-                  content += prtContent.innerHTML;
-                  content += '<footer>';
-                  content += document.getElementsByTagName("footer")[0].innerHTML;
-                  content += '</footer>';
-                  content +='</body></html>';
-                  console.log("CONTENT", content);
-                  WinPrint.document.write(content);
-                  WinPrint.document.close();
-                  WinPrint.focus();
-                  WinPrint.print();
-                  WinPrint.close();
-              }
-            </script>
-            <a href="#" onclick="printArea()">
+            <a href="#" onclick="window.print()">
               <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
             </a>
           </div>
@@ -149,7 +91,6 @@
           {% else %}
             {{ page.content }}
           {% endif %}
-          
         </div>
       </div>
     </section>
