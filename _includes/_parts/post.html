@@ -5,21 +5,6 @@
       {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
       <!--<p>{{ postsByYear }}</p>-->
       <div>
-        <!--<div class="gcse-searchbox" data-resultsUrl="http://www.intermediario.com.uy"
-data-newWindow="true" data-queryParameterName="search" >-->
-      <script>
-  (function() {
-    var cx = '012394262284664898745:qk9skqhjppu';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<!--<gcse:search></gcse:search>-->
-<gcse:search enableAutoComplete="true"></gcse:search>
       </div>
       <h4>Publicaciones</h4>
       <ul>
