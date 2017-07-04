@@ -2,6 +2,7 @@
   <p>Por más información acerca de nuestros servicios completa este formulario y te estaremos respondiendo a la brevedad.</p>
   <div class="row">
     <form action="https://formspree.io/{{ site.email }}" method="POST" >
+    <input type="hidden" name="_cc" value="mbanfi@asesur.com.uy" />
     <input type="hidden" name="_language" value="es" />
     <input type="text" name="_gotcha" style="display:none" />
     <input type="hidden" name="_next" value="//intermediario.com.uy/gracias" />
@@ -40,6 +41,19 @@
         <div class="col-sm-4">
           <input type="submit" class="btn btn-default" value="Enviar">
         </div>
+      </div>
+      <div class="col-sm-10 col-md-6">
+        <p>
+          <br>
+        <span class="glyphicon glyphicon-envelope"></span>
+        intermediario@asesur.com.uy
+        <br>
+        <span class="glyphicon glyphicon-home"></span>
+        Divina Comedia 1651
+        <br>
+        <span class="glyphicon glyphicon-menu-right"></span>
+        Montevideo, Uruguay
+        </p>
       </div>
     </form>
   </div>

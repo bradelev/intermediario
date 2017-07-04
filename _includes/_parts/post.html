@@ -2,18 +2,41 @@
 <div class="container-fluid">
   <div class="col-md-3">
     <nav class="sidebar">
-      {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
-      <!--<p>{{ postsByYear }}</p>-->
-      <div>
-      </div>
+      {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%-m %Y'" %}
+      <!--<div>
+      </div>-->
+      <!--<form action="/search.html" method="get">
+        <label for="search-box">Search</label>
+        <input type="text" id="search-box" name="query">
+        <input type="submit" value="search">
+      </form>-->
+
+      
       <h4>Publicaciones</h4>
       <ul>
       
       {% for year in postsByYear %}
-        <li class="t">{{ year.name }}</li>
+        {% assign mes = year.name | split: ' ' %}
+        {% assign y = mes.last %}
+        {% case mes.first %}
+          {% when '1' %}{% assign mes = 'Enero' %}
+          {% when '2' %}{% assign mes = 'Febrero' %}
+          {% when '3' %}{% assign mes = 'Marzo' %}
+          {% when '4' %}{% assign mes = 'Abril' %}
+          {% when '5' %}{% assign mes = 'Mayo' %}
+          {% when '6' %}{% assign mes = 'Junio' %}
+          {% when '7' %}{% assign mes = 'Julio' %}
+          {% when '8' %}{% assign mes = 'Agosto' %}
+          {% when '9' %}{% assign mes = 'Setiembre' %}
+          {% when '10' %}{% assign mes = 'Octubre' %}
+          {% when '11' %}{% assign mes = 'Noviembre' %}
+          {% when '12' %}{% assign mes = 'Diciembre' %}
+        {% endcase %}
+
+        <li class="t">{{ mes }} {{ y }}</li>
           <ul>
             {% for post in year.items %}
-              <li><a href="{{ post.url }}">{{ post.fecha_visible}} {{ post.title }}</a></li>
+              <li><a href="{{ post.url }}">{{ post.fecha_visible}}</a></li>
             {% endfor %}
           </ul>
       {% endfor %}
@@ -22,16 +45,16 @@
   </div>
   <div class="col-md-9">
     <section class="publicacion">
-
+      <ul id="search-results"></ul>
       <div class="row post-date">
         <div class="col-md-6">
           {% if page.content == "" %}
             {% for p in site.posts limit:1 %}
-              <strong>Año {{ anioPub }} | {{ p.titulo }} | Fecha: {{ p.date | date: "%d/%m/%Y"}}</strong><br>
+              <strong>Año {{ anioPub }} | {{ p.titulo }} | Edición Fecha: {{ p.date | date: "%d.%m.%Y"}}</strong><br>
               <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones/{{ p.link_archivo }}">Link para descargar edición impresa</a><br>
             {% endfor %}
           {% else %}
-            <strong>Año {{ anioPub }} | {{ page.titulo }} | Fecha: {{ page.date | date: "%d/%m/%Y"}}</strong><br>
+            <strong>Año {{ anioPub }} | {{ page.titulo }} | Edición Fecha: {{ page.date | date: "%d.%m.%Y"}}</strong><br>
             <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones/{{ page.link_archivo }}">Link para descargar edición impresa</a><br>
           {% endif %}
 
@@ -80,6 +103,20 @@
       </div>
     </section>
   </div>
+  <!--<script>
+    window.store = {
+      {% for post in site.posts %}
+        "{{ post.url | slugify }}": {
+          "title": "{{ post.title | xml_escape }}",
+          "author": "{{ post.author | xml_escape }}",
+          "category": "{{ post.category | xml_escape }}",
+          "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+          "url": "{{ post.url | xml_escape }}"
+        }
+        {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    };
+  </script>-->
 </div>
 
 

@@ -3,7 +3,7 @@ layout: post
 date:   2017-05-30 11:17:48 -0300
 link_archivo: 20170602171325918(A2153694xD3837).pdf
 fecha_visible: 30-05-2017
-titulo: Publicacion 1
+titulo: Numero 1
 category: publicacion
 ---
 
