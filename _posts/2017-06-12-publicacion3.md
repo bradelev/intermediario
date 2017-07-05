@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2017-06-02 11:17:48 -0300
+date:   2017-06-12 11:17:48 -0300
 link_archivo: Intermediario 12.06.2017 Numero 3.pdf
 fecha_visible: "12.06.2017"
 titulo: Numero 3
