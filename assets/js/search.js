@@ -8,10 +8,12 @@
         var item = store[results[i].ref];
         let contentCopy = item.content.toLowerCase();
         let occurrencePosition = contentCopy.indexOf(searchTerm.toLowerCase());
-        let anotherCopy = item.content;
-        anotherCopy = anotherCopy.replace(/searchTerm/g, '<strong>'++'</strong>')
+        let anotherCopy = item.content.substr(occurrencePosition , 550);
+        let regex = new RegExp( searchTerm, 'g' );
+        anotherCopy = anotherCopy.replace(regex, "<strong>"+searchTerm+"</strong>");
+        console.log(anotherCopy);
         appendString += '<li><a href="' + item.url + '"><h3>Publicación ' + item.title + ' - ' + item.date + '</h3></a>';
-        appendString += '<p style="text-align:center;">...' + item.content.substr(occurrencePosition , 550) + '...</p></li>';
+        appendString += '<p style="text-align:justify;">...' + anotherCopy + '...</p></li>';
       }
 
       searchResults.innerHTML = appendString;
