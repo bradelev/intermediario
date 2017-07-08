@@ -1,0 +1,21 @@
+<div id="noticias" class="container section">
+  <h2>Novedades</h2>
+  <div class="row">
+    <div class="col-lg-8">
+      {% if site.categories.noticias %}
+        {% for p in site.categories.noticias %}
+        <article class="news">
+          <h3>{{ p.titulo }}</h3>
+          <div class="news-content">
+            {{ p.content }}
+          </div>
+        </article>
+        {% endfor %}
+      {% else %}
+        <article class="news">
+          <h4>Próximamente aquí podrás encontrar más información.</h4>
+        </article>
+      {% endif %}
+    </div>
+  </div>
+</div>
