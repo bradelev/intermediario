@@ -80,15 +80,18 @@
         <div class="col-xs-12" id="printable-area">
           <div class="row" id="membrete">
             <div class="col-xs-12">
-
-              <h2>Intermediario</h2>
+              <h2><img src="{{ "/assets/img/logo.png" | prepend: full_base_url }}" alt="" style="width:320px; height:40px;"></h2>
+              <div class="row">
               {% if page.content == "" %}
                 {% for p in site.posts limit:1 %}
-                  <p>Montevideo, Año {{ anioPub }} | {{ p.titulo }} | Fecha: {{ p.date | date: "%d/%m/%Y"}}</p>
+                  <div class="header-bottom-left">Año {{ anioPub }} | {{ p.titulo }}</div>
+                  <div class="header-bottom-right">Montevideo, {{ p.date | date: "%d/%m/%Y"}}</div>
                 {% endfor %}
               {% else %}
-                <p>Montevideo, Año {{ anioPub }} | {{ page.titulo }} | Fecha: {{ page.date | date: "%d/%m/%Y"}}</p>
+                  <div class="header-bottom-left">Año {{ anioPub }} | {{ page.titulo }}</div>
+                  <div class="header-bottom-right">Montevideo, {{ page.date | date: "%d/%m/%Y"}}</div>
               {% endif %}
+              </div>
             </div>
           </div>
           {% if page.content == "" %}
