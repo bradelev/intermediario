@@ -75,20 +75,16 @@
     position: relative;
   }
   footer {
-    // text-align: center;
     background-color: #023c77;
     color: #eee;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
+  }
+  footer p {
+    text-align: center !important;
   }
   hr {
     border: 1px solid #fff;
     // page-break-before: avoid !important;
-  }
-  h2 + p {
-    // page-break-inside: avoid !important;
-    // position: relative;
   }
   .main-wrapper {
     float: none !important;
