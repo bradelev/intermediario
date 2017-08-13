@@ -82,7 +82,7 @@ hr {
 }
 
 .header-top {
-  background-image: url('../assets/img/back.jpg');
+  background-image: url('../assets/img/back3.jpg');
   // letter-spacing: 1.5px;
   .title {
     font-size: 36px;
@@ -172,11 +172,11 @@ hr {
   color: #eee;
 }
 .btn-default-search {
-  background-color: #023c77;
+  background-color: rgba(0,0,0,.5);
 }
 .navbar-default {
-  background-color: #023c77;
-  border-color: #014890;
+  background-color: rgba(0,0,0,.5);
+  border-color: #000;
 }
 .navbar-default .navbar-brand {
   color: #dddddd;
@@ -200,20 +200,20 @@ hr {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #014890;
+  background-color: #000;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #ffffff;
-  background-color: #014890;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle {
-  border-color: #014890;
+  border-color: #000;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #014890;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #dddddd;
@@ -241,7 +241,7 @@ hr {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffffff;
-    background-color: #014890;
+    background-color: #000;
   }
 }
 
