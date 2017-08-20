@@ -84,8 +84,20 @@ hr {
 .header-top {
   background-image: url('../assets/img/back3.jpg');
   // letter-spacing: 1.5px;
+  // background-position: -10px -330px;
+  // background-repeat: no-repeat;
+  .title-wrapper {
+    padding-bottom: 350px;
+  }
   .title {
+    color: #eee;
     font-size: 36px;
+    text-decoration: none;
+    &:hover {
+      color: #eee;
+    }
+    // box-shadow: #000 2px 2px;
+    // background-color: rgba(0,0,0,0.1);
     @media (min-width: 768px) and (max-width: 1023px) {
       font-size: 48px;
       letter-spacing: 1rem;
@@ -272,6 +284,7 @@ h2 {
 
 #membrete {
   display: none;
+  background-color: #023c77;
 }
 
 .company-description {
@@ -294,6 +307,7 @@ h2 {
   letter-spacing: -0.05rem;
   // font-weight: 600;
   color: #000;
+  margin-left: 8px;
 }
 .sidebar ul {
   padding-top: 10px;

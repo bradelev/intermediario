@@ -57,7 +57,7 @@
       <ul class="nav navbar-nav js-nav">
         <li><a href="{{site.url}}{{site.baseurl}}/">Inicio</a></li>
         <li><a href="{{site.url}}{{site.baseurl}}/ediciones">Ediciones</a></li>
-        <li><a href="{{site.url}}{{site.baseurl}}/noticias">Noticias</a></li>
+        <!--<li><a href="{{site.url}}{{site.baseurl}}/noticias">Noticias</a></li>-->
         <li><a href="{{site.url}}{{site.baseurl}}/contacto">Contacto</a></li>
       </ul>
       <form class="navbar-form navbar-right" action="/busqueda.html" method="get">
@@ -76,11 +76,11 @@
 <div class="header">
   {% if include.bg == "index-full" %}
   <div class="header-top">
-    <p>
-      <span class="title">intermeDIARIO</span>
+    <div class="title-wrapper">
+      <a href="{{site.url}}{{site.baseurl}}/ediciones" class="title"><span >intermeDIARIO</span></a>
       <br>
       <span class="subtitle">Periódico especializado en publicaciones legales</span>
-    </p>
+    </div>
   </div>
   {% elsif include.bg == "post" %}
   <div class="post-top"></div>
