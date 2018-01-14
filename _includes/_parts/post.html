@@ -50,11 +50,11 @@
         <div class="col-md-6">
           {% if page.content == "" %}
             {% for p in site.posts limit:1 %}
-              <strong>Año {{ anioPub }} | {{ p.titulo }} | Edición Fecha: {{ p.date | date: "%d.%m.%Y"}}</strong><br>
+              <strong>Año {{ p.anioPub }} | {{ p.titulo }} | Edición Fecha: {{ p.date | date: "%d.%m.%Y"}}</strong><br>
               <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones/{{ p.link_archivo }}">Link para descargar edición impresa</a><br>
             {% endfor %}
           {% else %}
-            <strong>Año {{ anioPub }} | {{ page.titulo }} | Edición Fecha: {{ page.date | date: "%d.%m.%Y"}}</strong><br>
+            <strong>Año {{ page.anioPub }} | {{ page.titulo }} | Edición Fecha: {{ page.date | date: "%d.%m.%Y"}}</strong><br>
             <a href="{{site.url}}{{site.baseurl}}/assets/publicaciones/{{ page.link_archivo }}">Link para descargar edición impresa</a><br>
           {% endif %}
 
@@ -84,11 +84,11 @@
               <div class="row">
               {% if page.content == "" %}
                 {% for p in site.posts limit:1 %}
-                  <div class="header-bottom-left">Año {{ anioPub }} | {{ p.titulo }}</div>
+                  <div class="header-bottom-left">Año {{ p.anioPub }} | {{ p.titulo }}</div>
                   <div class="header-bottom-right">Montevideo, {{ p.date | date: "%d/%m/%Y"}}</div>
                 {% endfor %}
               {% else %}
-                  <div class="header-bottom-left">Año {{ anioPub }} | {{ page.titulo }}</div>
+                  <div class="header-bottom-left">Año {{ page.anioPub }} | {{ page.titulo }}</div>
                   <div class="header-bottom-right">Montevideo, {{ page.date | date: "%d/%m/%Y"}}</div>
               {% endif %}
               </div>

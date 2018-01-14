@@ -1,6 +1,5 @@
 {% assign dayWeek = site.time | date: "%-A" %}
 {% assign month = site.time | date: "%-m" %}
-{% assign anioPub = site.time | date: "%Y" %}
 {% case month %}
   {% when '1' %}{% assign month = 'Enero' %}
   {% when '2' %}{% assign month = 'Febrero' %}
@@ -23,15 +22,6 @@
   {% when 'Thursday' %}{% assign dayWeek = 'Jueves' %}
   {% when 'Friday' %}{% assign dayWeek = 'Viernes' %}
   {% when 'Saturday' %}{% assign dayWeek = 'Sábado' %}
-{% endcase %}
-{% case anioPub %}
-  {% when '2017' %}{% assign anioPub = 'I' %}
-  {% when '2018' %}{% assign anioPub = 'II' %}
-  {% when '2019' %}{% assign anioPub = 'III' %}
-  {% when '2020' %}{% assign anioPub = 'IV' %}
-  {% when '2021' %}{% assign anioPub = 'V' %}
-  {% when '2022' %}{% assign anioPub = 'VI' %}
-  {% when '2022' %}{% assign anioPub = 'VII' %}
 {% endcase %}
 
 <!--<div class="row header">

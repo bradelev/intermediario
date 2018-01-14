@@ -1,10 +1,11 @@
 ---
 layout: post
 date:   2017-06-02 11:17:48 -0300
-link_archivo: Intermediario 02.06.2017 Numero 2.pdf
+link_archivo: Intermediario-2017.06.02-año1-num2.pdf
 fecha_visible: "02.06.2017"
 titulo: Numero 2
 category: publicacion
+anioPub: I
 ---
 
 ## SOMOS FRIENDLY S.A
