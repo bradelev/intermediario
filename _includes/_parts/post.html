@@ -36,7 +36,7 @@
         <li class="t">{{ mes }} {{ y }}</li>
           <ul>
             {% for post in year.items %}
-              <li><a href="{{ post.url }}">{{ post.fecha_visible}}</a></li>
+              <li><a href="{{ post.url }}">{{ post.fecha_visible}} Año {{ post.anioPub }} No {{ post.titulo | remove:'Numero '}}</a></li>
             {% endfor %}
           </ul>
       {% endfor %}
